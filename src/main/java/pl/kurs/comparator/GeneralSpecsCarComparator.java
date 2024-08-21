@@ -1,6 +1,6 @@
 package pl.kurs.comparator;
 
-import pl.kurs.model.Car;
+import pl.kurs.Car;
 
 import java.util.Comparator;
 

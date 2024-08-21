@@ -1,7 +1,6 @@
 package pl.kurs.homework02.comparator;
 
 import pl.kurs.homework02.model.Computer;
-import pl.kurs.model.Car;
 
 import java.util.Comparator;
 
