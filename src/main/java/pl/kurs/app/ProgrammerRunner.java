@@ -28,6 +28,7 @@ public class ProgrammerRunner {
         }
 
         System.out.println("Po posortowaniu: ");
+        System.out.println(":))))");
 
         Arrays.sort(programmers);
 

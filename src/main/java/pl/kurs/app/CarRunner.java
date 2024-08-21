@@ -32,6 +32,7 @@ public class CarRunner {
             System.out.println(car);
         }
         System.out.println("=--------------");
+        System.out.println("_)");
 
         Arrays.sort(cars, performanceSpecsCarComparator);
 
