@@ -3,15 +3,15 @@ package pl.kurs.model;
 import java.util.Objects;
 
 public class Car {
-    private String aaaaaproducer;
+    private String xxxproducer;
     private String model;
     private char modelCode;
     private int powerHp;
     private int torqueNm;
     private int vMaxInKph;
 
-    public Car(String aaaaaproducer, String model, char modelCode, int powerHp, int torqueNm, int vMaxInKph) {
-        this.aaaaaproducer = aaaaaproducer;
+    public Car(String xxxproducer, String model, char modelCode, int powerHp, int torqueNm, int vMaxInKph) {
+        this.xxxproducer = xxxproducer;
         this.model = model;
         this.modelCode = modelCode;
         this.powerHp = powerHp;
@@ -19,12 +19,12 @@ public class Car {
         this.vMaxInKph = vMaxInKph;
     }
 
-    public String getAaaaaproducer() {
-        return aaaaaproducer;
+    public String getXxxproducer() {
+        return xxxproducer;
     }
 
-    public void setAaaaaproducer(String aaaaaproducer) {
-        this.aaaaaproducer = aaaaaproducer;
+    public void setXxxproducer(String xxxproducer) {
+        this.xxxproducer = xxxproducer;
     }
 
     public String getModel() {
@@ -70,7 +70,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "producer='" + aaaaaproducer + '\'' +
+                "producer='" + xxxproducer + '\'' +
                 ", model='" + model + '\'' +
                 ", modelCode=" + modelCode +
                 ", powerHp=" + powerHp +
@@ -84,11 +84,11 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return modelCode == car.modelCode && powerHp == car.powerHp && torqueNm == car.torqueNm && vMaxInKph == car.vMaxInKph && Objects.equals(aaaaaproducer, car.aaaaaproducer) && Objects.equals(model, car.model);
+        return modelCode == car.modelCode && powerHp == car.powerHp && torqueNm == car.torqueNm && vMaxInKph == car.vMaxInKph && Objects.equals(xxxproducer, car.xxxproducer) && Objects.equals(model, car.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aaaaaproducer, model, modelCode, powerHp, torqueNm, vMaxInKph);
+        return Objects.hash(xxxproducer, model, modelCode, powerHp, torqueNm, vMaxInKph);
     }
 }
