@@ -2,7 +2,7 @@ package pl.kurs.app;
 
 import pl.kurs.comparator.GeneralSpecsCarComparator;
 import pl.kurs.comparator.PerformanceSpecsCarComparator;
-import pl.kurs.model.Car;
+import pl.kurs.homework02.Car;
 
 import java.util.Arrays;
 

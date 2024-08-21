@@ -5,7 +5,7 @@ package pl.kurs.comparator;
 //•	jeżeli moce są takie same to porównywanie po momencie obrotowym – od najwyższego do najniższego;
 //•	jeżeli z kolei wartości momentów obrotowych są takie same to porównujemy po prędkości maksymalnej auta – od największej do najmniejszej;
 
-import pl.kurs.model.Car;
+import pl.kurs.homework02.Car;
 
 import java.util.Comparator;
 
