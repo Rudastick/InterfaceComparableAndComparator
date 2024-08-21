@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class CarRunner {
     public static void main(String[] args) {
-        Car car1 = new Car("Opel", "Corsa", 'x', 100, 130, 160);
+        Car car1 = new Car("Opel", "Corsa", 'D', 100, 130, 160);
         Car car2 = new Car("Opel", "Corsa", 'C', 100, 130, 160);
 
         GeneralSpecsCarComparator generalComparator = new GeneralSpecsCarComparator();
