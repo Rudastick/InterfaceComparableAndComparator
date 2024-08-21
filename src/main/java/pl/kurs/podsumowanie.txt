@@ -1,0 +1,49 @@
+Interfejsy Comparable i Comparator są potrzebne, kiedy chcemy porównywać obiekty oraz określać ich porządek, a jakie kryterium będzie wykorzystywane do
+porównywania to zależy od tego jak zaimplementujemy te interfejsy.
+
+Interfejs Comparable
+Należy do Collections Framework (Comparable wprowadzono w Javie 1.2), zawiera tylko jedną metodę abstrakcyjną compareTo(), dzięki której klasa zyskuje możliwość
+ porównywania swoich obiektów. Równocześnie obiekty takiej klasy zyskują możliwość współdziałania z różnymi generycznymi klasami i metodami, które wymagają do swojego
+ działania parametrów typowych, które są ograniczone do takich, które implementują interfejs Comparable przez zwrot np. <T extends Comparable>. Praktycznie wszystkie
+  klasy z biblioteki Javy, które przechowują stan, implementują interfejs Comparable. Dotyczy to również wszystkich typów wyliczeniowych. Jeżeli tworzymy klasę
+  przechowującą stan to warto zaimplementować interfejs Comparable (zalecenie Joshuy Blocha).
+
+Dzięki zaimplementowaniu w klasie metody compareTo() interfejsu Comparable zyskujemy:
+•	Możliwość automatycznego sortowania kolekcji obiektów danego typu (metoda statyczna Collections.sort() oraz Arrays.sort());
+•	Ustawianie się obiektów w odpowiednim porządku (określonym w metodzie compareTo()) oraz eliminacja duplikatów w zbiorze TreeSet (kiedy compareTo() zwróci
+zero oznaczającą równość obiektów to element jest eliminowany);
+
+Założenia metody compareTo():
+Metoda powinna zwrócić:
+•	Liczbę ujemną, kiedy adresat/obiekt (this), na którym wywołujemy compareTo() jest mniejszy niż obiekt porównywany (jest poprzednikiem);
+•	0 gdy obiekty są równe;
+•	Liczbę dodatnią, kiedy adresat/obiekt (this), na którym wywołujemy compareTo() jest większy niż obiekt porównywany (jest następcą).
+
+Klasa String implementuje Comparable i łańcuchy znaków są porównywane na podstawie wartości kolejnych znaków.
+
+Kiedyś w przypadku porównania typów prostych całkowitoliczbowych korzystało się z operatorów relacji > (większy) i < (mniejszy), a do typów zmiennoprzecinkowych metod statycznych
+z klas osłonowych np. Double.compare(). Zastosowanie wspomnianych operatorów relacji jest zbyt rozwlekłe i podatne na błędy, więc nie jest już zalecane. Każdy typ
+prymitywny ma swoją klasę osłonową tzw wrappera i należy korzystać z metod statycznych compare() z tych klas.
+
+
+Interfejs Comparator
+Jest to interfejs, który zawiera dwie metody abstrakcyje compare() oraz equals(). Przydatność tego interfejsu pojawia się wtedy, kiedy nie możemy zmodyfikować klasy,
+która miałaby implementować lub już implementuje interfejs Comparable oraz, kiedy chcemy zdefiniować kilka strategii porównywania (np. alfabetycznie, po numerze PESEL itp.)
+
+
+Praca domowa1:
+Stwórz klasę Product, która będzie miała pola nazwa, gramatura, producent, cena, okres przydatności liczony w miesiącach, kraj pochodzenia, stawkę VAT na dany produkt.
+ Produkty powinny być porównywane w kolejności: nazwa, producent, gramatura, okres przydatności, kraj pochodzenia, cena i stawka VAT. Nazwy niech będą alfabetycznie, okres przydatności
+  od najkrótszego do najdłuższego, cena od najtańszego do najdroższego, stawka vat od najniższej do najwyższej.
+
+Praca domowa2:
+Stwórz złożoną agregację:
+Klasa Computer – będzie przechowywała następujące pola obiektowe:
+Płyta główna – muszą być informację o sockecie, producencie, modelu itp.
+Procesor – producent, model, taktowanie, ilość rdzeni, która generacja procesora, jak proces technologiczny (wyrażony w nanometrach);
+Dysk twardy – rodzaj (HDD/SSD), pojemność, producent, model
+Pamięć RAM – wielkość w GB, częstotliwość w MHz, jaki DDR, producent i model
+Karta graficzna – wielkość szyny w Mbit, ilość pamięci VRAM, model, producent
+Do tego stwórz odpowiednie komparatory dla komputera: MotherBoardComparator, ProcessorComparator, HardDriveComparator, RamComparator oraz GraphicCardComparator.
+ Kolejność elementów po których ma sortować dany komparator – wg. Twojego uznania :) Do porownania kierowac sie po klasie Computer.
+
