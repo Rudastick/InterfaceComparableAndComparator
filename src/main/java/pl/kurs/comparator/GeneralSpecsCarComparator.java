@@ -7,7 +7,7 @@ import java.util.Comparator;
 public class GeneralSpecsCarComparator implements Comparator<Car> {
     @Override
     public int compare(Car o1, Car o2) {
-        int result = o1.getBproducer().compareTo(o2.getBproducer());
+        int result = o1.getCproducer().compareTo(o2.getCproducer());
 
         if (result == 0) {
             result = o1.getModel().compareTo(o2.getModel());
